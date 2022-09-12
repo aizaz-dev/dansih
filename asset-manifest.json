@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dansih/static/css/main.660c5999.css",
+    "main.js": "/dansih/static/js/main.c1486e60.js",
+    "static/media/revicons.eot": "/dansih/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/dansih/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/dansih/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/dansih/index.html",
+    "main.660c5999.css.map": "/dansih/static/css/main.660c5999.css.map",
+    "main.c1486e60.js.map": "/dansih/static/js/main.c1486e60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.660c5999.css",
+    "static/js/main.c1486e60.js"
+  ]
+}
