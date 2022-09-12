@@ -1,0 +1,8 @@
+@import "./Styles/media.scss";
+@import "./Styles/variable.scss";
+
+.Main_App {
+  @include themed() {
+    background-color: t("bg");
+  }
+}

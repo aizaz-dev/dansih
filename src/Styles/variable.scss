@@ -1,0 +1,57 @@
+// $purple--light: #50317c; //White Mode Main Text COLOR
+$purple--light: #d44912; //White Mode Main Text COLOR
+$black--light: #000000ab; //White Mode Sub Text COLOR
+$white--light: white; //White Mode BackGround COLOR
+// $white--light: rgb(231, 70, 21); //White Mode BackGround COLOR
+$shadow-color--light: rgba(0, 0, 0, 0.5); //White Mode Shadow Color
+$family--light: "Poppins", sans-serif;
+// $family--light: "gothik", sans-serif;
+$family-des--light: "Nunito", sans-serif;
+
+$purple--dark: #956fca; //Black Mode Main Text COLOR
+$black--dark: #9b8888ab; //Black Mode Sub Text COLOR
+$white--dark: rgb(29, 27, 27); //Black Mode BackGround COLOR
+$shadow-color--dark: rgba(85, 83, 83, 0.5);
+$family--dark: "Poppins", sans-serif;
+$family-des--dark: "Nunito", sans-serif;
+$border:1px solid #e0e0e0;
+$dark:#2B2D42;
+$main:#ad1b3c;
+
+$themes: (
+  light: (
+    text: $purple--light,
+    subtext: $black--light,
+    bg: $white--light,
+    shadow: $shadow-color--light,
+  ),
+  dark: (
+    text: $purple--dark,
+    subtext: $black--dark,
+    bg: $white--dark,
+    shadow: $shadow-color--dark,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
